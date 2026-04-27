@@ -1,0 +1,35 @@
+.sticky-notes-accuracy {
+    padding: 20px;
+    text-align: center;
+    background-color: #fffde7;
+    transform: rotate(-2deg);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    .push-pin-icon {
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: "";
+        color: #d32f2f;
+    }
+}
+
+
+.sticky-notes-total-data {
+    padding: 20px;
+    text-align: center;
+    background-color: #e3f2fd;
+    transform: rotate(1.5deg);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    .push-pin-icon {
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #d32f2f;
+    }
+}

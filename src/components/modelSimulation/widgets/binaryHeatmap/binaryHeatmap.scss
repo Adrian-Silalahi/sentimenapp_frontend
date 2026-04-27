@@ -1,0 +1,34 @@
+ .predicted-label {
+     text-align: center;
+     margin-bottom: 10px;
+     font-weight: 500;
+     color: #6c757d;
+ }
+
+ .heatmap-wrapper {
+     display: flex;
+     align-items: stretch;
+ }
+
+ .table-layout-fixed {
+     table-layout: fixed;
+ }
+
+ .hidden-header-cell {
+     width: 15%;
+     visibility: hidden;
+ }
+
+ .header-cell {
+     font-weight: 600;
+     height: 25px;
+     color: #4a4a4a;
+     border-bottom: 1px solid #e0e0e0;
+ }
+
+ .row-header-cell {
+     font-weight: 600;
+     height: 30px;
+     color: #4a4a4a;
+     border-right: 1px solid #e0e0e0;
+ }

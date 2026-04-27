@@ -1,0 +1,93 @@
+.data-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    min-width: 280px;
+
+    @media (min-width: 576px) {
+        width: calc(50% - 10px);
+    }
+
+    @media (min-width: 768px) {
+        width: calc(33.333% - 14px);
+    }
+
+    @media (min-width: 1200px) {
+        width: calc(20% - 16px);
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__icon {
+        font-size: 2.5rem;
+        color: #757575;
+
+        &--google-play-store {
+            //Warna udah bawaan dari icon
+        }
+
+        &--medium {
+            color: #000000;
+        }
+
+        &--x {
+            color: #000000;
+        }
+
+        &--youtube {
+            color: #FF0000;
+        }
+    }
+
+    &__summary {
+        text-align: right;
+    }
+
+    &__count {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    &__label {
+        font-size: 0.875rem;
+        color: #757575;
+    }
+
+    &__separator {
+        border: 0;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.875rem;
+        color: #333;
+    }
+
+    &__detail-item {
+        display: flex;
+        align-items: center;
+    }
+
+    &__detail-icon {
+        margin-right: 8px;
+        color: #757575;
+        font-size: 1rem;
+    }
+
+    &__source_platform {
+        font-weight: 700;
+    }
+}

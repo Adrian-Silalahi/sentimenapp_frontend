@@ -1,0 +1,12 @@
+.general-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .bar-container {
+    display: flex;
+    flex-direction: row;
+    padding: 40px 20px;
+    align-items: center;
+  }
+}

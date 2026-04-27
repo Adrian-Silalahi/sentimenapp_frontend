@@ -1,0 +1,21 @@
+.data-stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+
+    .data-stats-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .data-stats-cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; // Pusatkan kartu
+        gap: 20px; // Jarak antar kartu
+    }
+}

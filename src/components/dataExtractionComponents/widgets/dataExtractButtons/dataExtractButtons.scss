@@ -1,0 +1,16 @@
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 12px;
+
+    .download-button {
+        margin-right: 10px;
+        color: rgb(10, 92, 92);
+        border-color: rgb(10, 92, 92);
+
+        &:hover {
+            background-color: rgba(10, 92, 92, 0.08);
+            border-color: rgb(10, 92, 92);
+        }
+    }
+}

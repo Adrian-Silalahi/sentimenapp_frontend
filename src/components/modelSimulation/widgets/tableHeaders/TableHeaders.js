@@ -1,0 +1,45 @@
+import { useSelector } from "react-redux";
+import "./tableHeaders.scss";
+
+const TableHeader = () => {
+  const { table_headers } = useSelector((state) => state.tableData);
+
+  const getHeaderCellClass = (headerText) => {
+    if (!headerText) return "";
+    switch (headerText) {
+      case "message":
+      case "HTML element cleansing result":
+      case "Normalize text result":
+      case "Cleaning text result":
+      case "Data balancing result":
+        return "header-cell-message";
+      case "Actual label":
+        return "header-cell-label";
+      case "Prediction result":
+        return "header-cell-predict";
+      case "Confidence":
+        return "header-cell-confidence";
+      default:
+        return "";
+    }
+  };
+
+  return (
+    <div
+      className="table-header"
+      style={{ backgroundColor: "#ededed", color: "#555" }}
+    >
+      <div className="number-header-cell">No</div>
+      {table_headers.map((header, idx) => {
+        const specificClass = getHeaderCellClass(header);
+        return (
+          <div key={idx} className={`regular-header-cell ${specificClass}`}>
+            {header}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default TableHeader;

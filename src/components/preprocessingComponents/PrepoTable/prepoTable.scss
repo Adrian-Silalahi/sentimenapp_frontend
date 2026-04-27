@@ -1,0 +1,31 @@
+.entries-data-count {
+    display: flex;
+    justify-content: space-between;
+
+    .right {
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-between;
+    }
+}
+
+.table-container {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    font-size: 0.94rem;
+
+    /* Firefox */
+}
+
+.table-container ::-webkit-scrollbar {
+    // display: none;
+
+    /* Untuk browser berbasis WebKit kayak chrome*/
+}

@@ -1,0 +1,30 @@
+.process-paper {
+    padding: 16px 24px;
+    border-radius: 0px;
+    width: 100%;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px !important;
+    min-height: 0;
+
+    .content-above-button {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 12px;
+        overflow: hidden;   // prevents pushing button off screen
+        min-height: 0;      // allows flex child to actually shrink
+    }
+
+    .button-box {
+        flex-shrink: 0;
+        margin: 20px 0px;
+        padding: 0px !important;
+        display: flex;
+        justify-content: space-between;
+    }
+}

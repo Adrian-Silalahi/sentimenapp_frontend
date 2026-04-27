@@ -1,0 +1,43 @@
+.table-header {
+    height: 40px;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    padding-right: 15px;
+
+    .number-header-cell {
+        padding: 0 7px;
+        line-height: 40px;
+        width: 40px;
+        text-align: center;
+        flex-shrink: 0;
+        // border-right: 1px solid #5c9ce5;
+    }
+
+    .regular-header-cell {
+        padding: 0 7px;
+        box-sizing: border-box;
+        line-height: 40px;
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        // border-right: 1px solid #5c9ce5;
+
+        &.header-cell-message {
+            flex: 1 1 auto; // Mengisi sisa ruang
+            min-width: 0;
+        }
+
+        &.header-cell-label,
+        &.header-cell-confidence {
+            flex: 0 0 130px;
+        }
+
+        &.header-cell-predict {
+            flex: 0 0 170px;
+        }
+
+    }
+}

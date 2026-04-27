@@ -1,0 +1,43 @@
+$padding-right: 10px;
+
+.table-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+
+    .number-cell {
+        border-right: 1px solid #e0e0e0;
+        padding: 0 7px;
+        width: 40px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .regular-cell {
+        border-right: 1px solid #e0e0e0;
+        padding: 0 10px;
+        display: flex;
+        flex: 1;
+        box-sizing: border-box;
+        scrollbar-width: none;
+
+        .cell-message {
+            overflow: scroll;
+        }
+
+        &.cell-label,
+        &.cell-confidence {
+            flex: 0 0 130px;
+        }
+
+        &.cell-predict {
+            flex: 0 0 170px;
+
+        }
+    }
+}
+
+.table-row ::-webkit-scrollbar {
+    display: none;
+    /* Untuk browser berbasis WebKit kayak chrome*/
+}

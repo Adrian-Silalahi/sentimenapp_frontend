@@ -1,0 +1,73 @@
+.profile-menu-improved {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    z-index: 105;
+    width: 180px;
+    padding: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .user-info-section {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #eeeeee;
+        margin-bottom: 8px;
+
+        .username-display {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333333;
+            margin-bottom: 4px;
+        }
+
+        .user-email {
+            font-size: 13px;
+            color: #777777;
+        }
+    }
+
+    .logout-button-improved {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 10px 15px;
+        background-color: #fdecea;
+        color: #d9534f;
+        border: 1px solid #fbc9c7;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
+        transition:
+            background-color 0.2s ease-in-out,
+            color 0.2s ease-in-out,
+            border-color 0.2s ease-in-out;
+
+        svg {
+            fill: currentColor;
+            transition: fill 0.2s ease-in-out;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #d9534f;
+            color: #ffffff;
+            border-color: #d43f3a;
+            outline: none;
+        }
+
+        &:active {
+            background-color: #c9302c;
+            border-color: #ac2925;
+        }
+    }
+}

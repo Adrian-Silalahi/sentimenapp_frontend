@@ -1,0 +1,32 @@
+.preview-paper {
+    padding: 24px 32px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto; // Center horizontally
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 120px); // Fixed height so button always visible
+    max-height: 820px;
+
+    .content-above-button {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        overflow: hidden; // prevent overflow pushing button off screen
+        min-height: 0; // important: allows flex child to shrink
+    }
+
+    .button-box {
+        flex-shrink: 0; // never shrink the button row
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0px 8px 0px;
+
+        button {
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+    }
+}

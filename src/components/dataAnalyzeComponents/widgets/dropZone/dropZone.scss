@@ -1,0 +1,78 @@
+.drop-zone-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    .drop-zone {
+        border: 2px dashed #dadada;
+        border-radius: 8px;
+        padding: 30px;
+        text-align: center;
+        cursor: pointer;
+        background-color: white;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+
+        &:hover,
+        &.dragging {
+            background-color: #f5f5f5;
+            border-color: #bbbbbb; // Warna border saat hover umum
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            color: #888888;
+            margin-bottom: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .drop-zone-text-main {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .drop-zone-text-secondary {
+            font-size: 0.9rem;
+            color: #777777;
+            margin-bottom: 16px;
+        }
+
+        // Gaya spesifik untuk mode simulasi
+        &.simulation {
+            border-color: #757575; // PERUBAHAN: Border abu-abu (charcoal)
+
+            .upload-icon {
+                color: #757575; // PERUBAHAN: Ikon abu-abu (charcoal)
+            }
+
+            &:hover,
+            &.dragging {
+                background-color: #f5f5f5; // PERUBAHAN: Latar belakang abu-abu terang saat hover
+                border-color: #424242; // PERUBAHAN: Border abu-abu lebih gelap saat hover
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
