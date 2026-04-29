@@ -42,8 +42,8 @@ const DataExtraction: React.FC = () => {
     navigate("/roberta-builder-simulator?from=data-extraction");
   };
   const [selectedPlatform, setSelectedPlatform] = useState<
-    "twitter" | "youtube" | "playstore" | ""
-  >("twitter");
+    "youtube" | "playstore" | "twitter" | ""
+  >("youtube");
 
   // States based on existing logic
   const [playstoreLink, setPlaystoreLink] = useState("");
@@ -247,13 +247,6 @@ const DataExtraction: React.FC = () => {
               </h3>
               <div className="grid gap-sm mb-md grid-cols-3 gap-2">
                 {renderPlatformSelector(
-                  "twitter",
-                  <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl">
-                    𝕏
-                  </div>,
-                  "Twitter",
-                )}
-                {renderPlatformSelector(
                   "youtube",
                   <div className="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
                     <span className="material-symbols-outlined">
@@ -289,6 +282,13 @@ const DataExtraction: React.FC = () => {
                     </svg>
                   </div>,
                   "Play Store",
+                )}{" "}
+                {renderPlatformSelector(
+                  "twitter",
+                  <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl">
+                    𝕏
+                  </div>,
+                  "Twitter",
                 )}
               </div>
 
@@ -587,7 +587,7 @@ const DataExtraction: React.FC = () => {
 
                     <button
                       onClick={handleGoToAnalyzeData}
-                      className="flex-1 px-4 py-3 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] whitespace-nowrap"
+                      className="flex-1 px-4 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] whitespace-nowrap"
                     >
                       <span className="material-symbols-outlined text-[18px]">
                         analytics
@@ -597,7 +597,7 @@ const DataExtraction: React.FC = () => {
 
                     <button
                       onClick={handleGoToFineTune}
-                      className="flex-1 px-4 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] whitespace-nowrap"
+                      className="flex-1 px-4 py-3 text-sm font-semibold text-white bg-[#630ed4] hover:bg-[#500bad] rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] whitespace-nowrap"
                     >
                       Model Fine-Tuning
                       <span className="material-symbols-outlined text-[18px] text-amber-300">

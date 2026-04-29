@@ -131,6 +131,7 @@ const SimulationProcessPaper = () => {
       <DataProcessButtons
         downloadFileNames={download_file_names}
         handleBack={handleBack}
+        activeStep={activeStep}
         handleNext={handleNext}
         isCurrentStepCompleted={isCurrentStepCompleted}
         isLoading={isLoading}

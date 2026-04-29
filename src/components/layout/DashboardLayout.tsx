@@ -113,7 +113,7 @@ const DashboardLayout: React.FC = () => {
               >
                 database
               </span>
-              Extraction
+              Data Extraction
             </Link>
           </li>
 
@@ -127,7 +127,7 @@ const DashboardLayout: React.FC = () => {
                 <span className="material-symbols-outlined text-[20px]">
                   cleaning_services
                 </span>
-                Text Preprocessing
+                Preprocessing
               </div>
               <span
                 className={`material-symbols-outlined text-[16px] transition-transform ${isPreprocessOpen ? "rotate-180" : ""}`}
@@ -150,7 +150,7 @@ const DashboardLayout: React.FC = () => {
                     to="/normalize-text"
                     className={`block py-2 text-sm ${isActive("/normalize-text") ? "text-emerald-600 font-semibold" : "text-slate-500 hover:text-emerald-600"}`}
                   >
-                    Normalize Text
+                    Normalization
                   </Link>
                 </li>
                 <li>
@@ -158,7 +158,7 @@ const DashboardLayout: React.FC = () => {
                     to="/vader-labeling"
                     className={`block py-2 text-sm ${isActive("/vader-labeling") ? "text-emerald-600 font-semibold" : "text-slate-500 hover:text-emerald-600"}`}
                   >
-                    Vader Labeling
+                    Sentiment Labeling
                   </Link>
                 </li>
                 <li>
@@ -183,7 +183,7 @@ const DashboardLayout: React.FC = () => {
                 <span className="material-symbols-outlined text-[20px]">
                   analytics
                 </span>
-                Analyze
+                Analysis
               </div>
               <span
                 className={`material-symbols-outlined text-[16px] transition-transform ${isAnalyzeOpen ? "rotate-180" : ""}`}
@@ -206,7 +206,7 @@ const DashboardLayout: React.FC = () => {
                     to="/file-based-analysis"
                     className={`block py-2 text-sm ${isActive("/file-based-analysis") ? "text-emerald-600 font-semibold" : "text-slate-500 hover:text-emerald-600"}`}
                   >
-                    File Based
+                    File Upload
                   </Link>
                 </li>
               </ul>
@@ -232,17 +232,8 @@ const DashboardLayout: React.FC = () => {
               >
                 architecture
               </span>
-              Model builder
+              Model Builder
             </Link>
-          </li>
-
-          <li>
-            <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200">
-              <span className="material-symbols-outlined text-[20px]">
-                account_circle
-              </span>
-              Profil
-            </button>
           </li>
         </ul>
       </nav>

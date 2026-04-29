@@ -14,6 +14,7 @@ const DataProcessButtons = ({
   completedList,
   downloadFileNames,
   setIsPopUp,
+  activeStep,
 }) => {
   const balancingIndex = 3;
   const isFinetuneComplete = completedList[4] === true;
@@ -25,7 +26,7 @@ const DataProcessButtons = ({
   const handleDownloadDataset = async () => {
     try {
       const blob = await api.downloadPreprocessedFile(
-        downloadFileNames[indexStep]
+        downloadFileNames[indexStep],
       );
       const downloadLink = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -43,16 +44,18 @@ const DataProcessButtons = ({
 
   return (
     <Box className="data-process-button-box">
-      <Box className="button-left-side">
-        <Button
-          className="regular-back-button"
-          color="inherit"
-          onClick={handleBack}
-          sx={{ mr: 1 }}
-        >
-          Back
-        </Button>
-      </Box>
+      {activeStep !== 5 && (
+        <Box className="button-left-side">
+          <Button
+            className="regular-back-button"
+            color="inherit"
+            onClick={handleBack}
+            sx={{ mr: 1 }}
+          >
+            Back
+          </Button>
+        </Box>
+      )}
 
       <Box
         className="button-right-side"

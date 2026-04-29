@@ -34,11 +34,11 @@ const LandingPage: React.FC = () => {
                 AI-Powered
               </div>
               <h1 className="font-headline-xl text-headline-xl text-on-surface">
-                Understand What People Really Think About ChatGPT
+                Analyze Public Sentiment from Social Media — Powered by AI
               </h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
                 An end-to-end platform that collects public opinions from
-                Twitter, YouTube, and Play Store — then automatically analyzes
+                YouTube, Play Store, and Twitter — then automatically analyzes
                 whether the sentiment is positive, negative, or neutral. No
                 coding required.
               </p>
@@ -64,106 +64,46 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Visual Anchor: Dashboard Mockup */}
-            <div className="relative w-full h-[400px] md:h-[500px] rounded-xl border border-surface-variant bg-surface shadow-[0_20px_40px_rgba(18,28,42,0.05)] overflow-hidden flex flex-col group">
-              {/* Mac-like Header */}
-              <div className="h-10 bg-surface-container-lowest border-b border-surface-variant flex items-center px-sm gap-xs">
-                <div className="w-3 h-3 rounded-full bg-outline-variant"></div>
-                <div className="w-3 h-3 rounded-full bg-outline-variant"></div>
-                <div className="w-3 h-3 rounded-full bg-outline-variant"></div>
-              </div>
-              {/* Dashboard Content Grid */}
-              <div className="flex-1 p-md grid grid-cols-12 gap-md overflow-hidden bg-surface-bright">
-                {/* Left Col: Chart & Stats */}
-                <div className="col-span-5 flex flex-col gap-sm">
-                  <div className="bg-surface-container-lowest p-sm rounded-lg border border-surface-variant flex flex-col items-center justify-center gap-sm">
-                    <span className="font-label-bold text-label-bold text-on-surface-variant self-start">
-                      SENTIMENT DISTRIBUTION
-                    </span>
-                    <div
-                      className="w-32 h-32 rounded-full shadow-inner relative"
-                      style={{
-                        background:
-                          "conic-gradient(#006c49 0% 65%, #10b981 65% 90%, #e29100 90% 100%)",
-                      }}
-                    >
-                      <div className="absolute inset-4 bg-surface-container-lowest rounded-full flex items-center justify-center">
-                        <span className="font-headline-md text-headline-md text-on-surface">
-                          65%
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex gap-sm mt-2">
-                      <div className="flex items-center gap-xs font-label-bold text-label-bold text-on-surface-variant">
-                        <span className="w-2 h-2 rounded-full bg-primary"></span>{" "}
-                        Pos
-                      </div>
-                      <div className="flex items-center gap-xs font-label-bold text-label-bold text-on-surface-variant">
-                        <span className="w-2 h-2 rounded-full bg-primary-container"></span>{" "}
-                        Neu
-                      </div>
-                    </div>
+            {/* Visual Anchor: 3D Browser Dashboard Mockup */}
+            <div
+              className="relative w-full flex justify-center items-center"
+              style={{ perspective: "2000px" }}
+            >
+              {/* Tilted Mac Browser Container */}
+              <div
+                className="w-full rounded-xl shadow-[-20px_20px_60px_-15px_rgba(0,0,0,0.15)] border border-slate-200 overflow-hidden font-sans bg-white transition-transform duration-700 hover:scale-105"
+                style={{
+                  transform:
+                    "rotateY(-15deg) rotateX(5deg) rotateZ(2deg) scale(0.95)",
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                {/* Browser Header */}
+                <div className="bg-slate-100 px-4 py-3 flex items-center gap-4 border-b border-slate-200">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-400 shadow-sm"></div>
+                    <div className="w-3 h-3 rounded-full bg-amber-400 shadow-sm"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-400 shadow-sm"></div>
                   </div>
-                  <div className="bg-surface-container-lowest p-sm rounded-lg border border-surface-variant">
-                    <span className="font-label-bold text-label-bold text-on-surface-variant block mb-1">
-                      TOTAL DATA POINTS
+                  <div className="bg-white rounded-md px-4 py-1.5 text-xs text-slate-500 flex-1 mx-4 flex items-center gap-2 border border-slate-200 shadow-sm">
+                    <span className="material-symbols-outlined text-[14px] text-emerald-600">
+                      smart_toy
                     </span>
-                    <span className="font-headline-lg text-headline-lg text-primary">
-                      1.2M
-                    </span>
+                    <span>ChatGPT Analysis - SentimenAI</span>
                   </div>
                 </div>
 
-                {/* Right Col: Feed */}
-                <div className="col-span-7 flex flex-col gap-xs">
-                  <span className="font-label-bold text-label-bold text-on-surface-variant mb-xs">
-                    LATEST EXTRACTIONS
-                  </span>
-                  {/* Mock Tweet 1 */}
-                  <div className="bg-surface-container-lowest p-sm rounded-lg border border-surface-variant flex flex-col gap-xs hover:bg-surface-container-low transition-colors cursor-default">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-surface-variant"></div>
-                        <div className="w-20 h-2 bg-surface-variant rounded"></div>
-                      </div>
-                      <span className="px-2 py-1 bg-[#adedd3] text-[#005236] rounded font-label-bold text-[10px]">
-                        POSITIVE
-                      </span>
-                    </div>
-                    <div className="w-full h-2 bg-surface-variant rounded mt-1"></div>
-                    <div className="w-3/4 h-2 bg-surface-variant rounded"></div>
-                  </div>
-                  {/* Mock Tweet 2 */}
-                  <div className="bg-surface-container-lowest p-sm rounded-lg border border-surface-variant flex flex-col gap-xs hover:bg-surface-container-low transition-colors cursor-default">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-surface-variant"></div>
-                        <div className="w-16 h-2 bg-surface-variant rounded"></div>
-                      </div>
-                      <span className="px-2 py-1 bg-[#e6eeff] text-[#00422b] rounded font-label-bold text-[10px]">
-                        NEUTRAL
-                      </span>
-                    </div>
-                    <div className="w-5/6 h-2 bg-surface-variant rounded mt-1"></div>
-                    <div className="w-1/2 h-2 bg-surface-variant rounded"></div>
-                  </div>
-                  {/* Mock Tweet 3 */}
-                  <div className="bg-surface-container-lowest p-sm rounded-lg border border-surface-variant flex flex-col gap-xs hover:bg-surface-container-low transition-colors cursor-default">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-surface-variant"></div>
-                        <div className="w-24 h-2 bg-surface-variant rounded"></div>
-                      </div>
-                      <span className="px-2 py-1 bg-[#ffdad6] text-[#93000a] rounded font-label-bold text-[10px]">
-                        NEGATIVE
-                      </span>
-                    </div>
-                    <div className="w-full h-2 bg-surface-variant rounded mt-1"></div>
-                    <div className="w-2/3 h-2 bg-surface-variant rounded"></div>
-                  </div>
+                {/* Dashboard Screenshot Placeholder */}
+                <div className="w-full bg-[#f8fafc] relative flex">
+                  <img
+                    src="/dashboard-screenshoot.png"
+                    alt="Dashboard"
+                    className="w-full h-auto object-contain block"
+                  />
                 </div>
               </div>
             </div>
+
             {/* Subtle background accent */}
             <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-surface-container to-transparent opacity-50 z-0 pointer-events-none"></div>
           </div>
@@ -240,8 +180,8 @@ const LandingPage: React.FC = () => {
                 </h3>
                 <p className="font-body-md text-body-md text-on-surface-variant">
                   Automatically clean, normalize, and classify text sentiment
-                  using a fine-tuned RoBERTa AI model — trained on 37,000+ real
-                  public opinions.
+                  using AI — analyze single texts or batch-process entire
+                  datasets in seconds.
                 </p>
               </div>
               {/* Feature 3 */}
@@ -252,12 +192,12 @@ const LandingPage: React.FC = () => {
                   </span>
                 </div>
                 <h3 className="font-headline-md text-headline-md text-on-surface">
-                  Fine-Tuning
+                  Model Builder
                 </h3>
                 <p className="font-body-md text-body-md text-on-surface-variant">
-                  Train your own sentiment analysis model with custom datasets.
-                  Upload data, configure parameters, and download the trained
-                  model — all from the browser.
+                  Explore how a RoBERTa model is fine-tuned for sentiment
+                  analysis — an interactive simulation of the full training
+                  pipeline, from parameters to evaluation.
                 </p>
               </div>
             </div>
@@ -312,11 +252,11 @@ const LandingPage: React.FC = () => {
                     3
                   </div>
                   <h4 className="font-headline-md text-headline-md text-on-surface mt-sm">
-                    Evaluate
+                    Analyze
                   </h4>
                   <p className="font-body-md text-body-md text-on-surface-variant max-w-xs">
-                    See clear results: overall accuracy, per-class metrics,
-                    confusion matrix, and downloadable reports.
+                    Get clear sentiment results: positive, negative, or neutral
+                    — for single texts or entire datasets at once.
                   </p>
                 </div>
               </div>
@@ -330,8 +270,8 @@ const LandingPage: React.FC = () => {
               Ready to get started?
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-sm">
-              See how public opinion breaks down — start your first analysis in
-              under a minute.
+              Extract social media data, preprocess it, and get AI-powered
+              sentiment insights — all in under a minute.
             </p>
             <Link to="/dashboard">
               <button className="bg-primary text-on-primary font-label-bold text-label-bold px-md py-sm rounded-lg flex items-center gap-xs hover:shadow-[0_8px_16px_rgba(0,108,73,0.15)] transition-all">

@@ -1,8 +1,11 @@
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import "./tableHeaders.scss";
 
 const TableHeader = () => {
   const { table_headers } = useSelector((state) => state.tableData);
+  const location = useLocation();
+  const isSimulator = location.pathname.includes("/roberta-builder-simulator");
 
   const getHeaderCellClass = (headerText) => {
     if (!headerText) return "";
@@ -27,7 +30,10 @@ const TableHeader = () => {
   return (
     <div
       className="table-header"
-      style={{ backgroundColor: "#ededed", color: "#555" }}
+      style={{ 
+        backgroundColor: isSimulator ? "#630ed4" : "#ededed", 
+        color: isSimulator ? "#ffffff" : "#555" 
+      }}
     >
       <div className="number-header-cell">No</div>
       {table_headers.map((header, idx) => {
