@@ -1,7 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const LandingPage: React.FC = () => {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const showcaseTabs = [
+    {
+      id: "extraction",
+      label: "Data Extraction",
+      icon: "database",
+      color: "emerald",
+      description:
+        "Scrape public opinions from YouTube, Play Store, and Twitter — directly from the browser. Set your keyword, hit extract, and watch the data flow in.",
+      screenshot: "/screenshots/extraction.png",
+    },
+    {
+      id: "preprocessing",
+      label: "Preprocessing",
+      icon: "cleaning_services",
+      color: "emerald",
+      description:
+        "Clean and prepare your data through 4 automated steps: HTML cleansing, normalization, sentiment labeling, and data balancing.",
+      screenshot: "/screenshots/preprocessing.png",
+    },
+    {
+      id: "analysis",
+      label: "Analysis",
+      icon: "analytics",
+      color: "blue",
+      description:
+        "Analyze sentiment instantly — type a single text or upload an entire dataset. Get clear results: Positive, Negative, or Neutral.",
+      screenshot: "/screenshots/analysis.png",
+    },
+    {
+      id: "model-builder",
+      label: "Model Builder",
+      icon: "architecture",
+      color: "purple",
+      description:
+        "Explore how a RoBERTa model is fine-tuned for sentiment analysis — an interactive simulation of the full training pipeline.",
+      screenshot: "/screenshots/model-builder.png",
+    },
+  ];
+
   return (
     <div className="w-full bg-background text-on-background font-body-md text-body-md antialiased overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
       {/* TopAppBar */}
@@ -23,119 +64,238 @@ const LandingPage: React.FC = () => {
         {" "}
         {/* Offset for fixed header */}
         {/* Hero Section */}
-        <section className="bg-surface-container-lowest pt-lg pb-xl relative overflow-hidden">
-          <div className="max-w-container-max mx-auto px-gutter grid md:grid-cols-2 gap-lg items-center relative z-10">
-            {/* Text Content */}
-            <div className="flex flex-col items-start gap-md">
-              <div className="inline-flex items-center gap-xs px-sm py-xs bg-secondary-container rounded-full text-on-secondary-container font-label-bold text-label-bold">
-                <span className="material-symbols-outlined text-[16px]">
-                  smart_toy
-                </span>
-                AI-Powered
-              </div>
-              <h1 className="font-headline-xl text-headline-xl text-on-surface">
-                Analyze Public Sentiment from Social Media — Powered by AI
-              </h1>
-              <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
-                An end-to-end platform that collects public opinions from
-                YouTube, Play Store, and Twitter — then automatically analyzes
-                whether the sentiment is positive, negative, or neutral. No
-                coding required.
-              </p>
-              <div className="flex flex-wrap items-center gap-sm mt-sm">
-                <Link to="/dashboard">
-                  <button className="bg-primary text-on-primary font-label-bold text-label-bold px-md py-sm rounded-lg flex items-center gap-xs hover:shadow-[0_8px_16px_rgba(0,108,73,0.15)] transition-all">
-                    Start Analysis
-                    <span className="material-symbols-outlined text-[18px]">
-                      arrow_forward
-                    </span>
-                  </button>
-                </Link>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("demo-section")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="bg-transparent border border-outline-variant text-primary font-label-bold text-label-bold px-md py-sm rounded-lg flex items-center gap-xs hover:bg-surface-container-low transition-colors"
-                >
-                  View Demo
+        <section className="bg-surface-container-lowest pt-xl pb-xl relative overflow-hidden">
+          <div className="max-w-3xl mx-auto px-gutter text-center flex flex-col items-center relative z-10">
+            <div className="inline-flex items-center gap-xs px-sm py-xs bg-secondary-container rounded-full text-on-secondary-container font-label-bold text-label-bold mb-md">
+              <span className="material-symbols-outlined text-[16px]">
+                smart_toy
+              </span>
+              AI-Powered Sentiment Analysis
+            </div>
+            <h1 className="font-headline-xl text-headline-xl text-on-surface mb-md">
+              Analyze Public Sentiment from Social Media — Powered by AI
+            </h1>
+            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-lg">
+              An end-to-end platform that collects public opinions from YouTube,
+              Play Store, and Twitter — then automatically analyzes whether the
+              sentiment is positive, negative, or neutral. No coding required.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-sm">
+              <Link to="/dashboard">
+                <button className="bg-primary text-on-primary font-label-bold text-label-bold px-md py-sm rounded-lg flex items-center gap-xs hover:shadow-[0_8px_16px_rgba(0,108,73,0.15)] transition-all">
+                  Start Analysis
+                  <span className="material-symbols-outlined text-[18px]">
+                    arrow_forward
+                  </span>
                 </button>
-              </div>
-            </div>
-
-            {/* Visual Anchor: 3D Browser Dashboard Mockup */}
-            <div
-              className="relative w-full flex justify-center items-center"
-              style={{ perspective: "2000px" }}
-            >
-              {/* Tilted Mac Browser Container */}
-              <div
-                className="w-full rounded-xl shadow-[-20px_20px_60px_-15px_rgba(0,0,0,0.15)] border border-slate-200 overflow-hidden font-sans bg-white transition-transform duration-700 hover:scale-105"
-                style={{
-                  transform:
-                    "rotateY(-15deg) rotateX(5deg) rotateZ(2deg) scale(0.95)",
-                  transformStyle: "preserve-3d",
-                }}
+              </Link>
+              <button
+                onClick={() =>
+                  document
+                    .getElementById("demo-section")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="bg-transparent border border-outline-variant text-primary font-label-bold text-label-bold px-md py-sm rounded-lg flex items-center gap-xs hover:bg-surface-container-low transition-colors"
               >
-                {/* Browser Header */}
-                <div className="bg-slate-100 px-4 py-3 flex items-center gap-4 border-b border-slate-200">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-400 shadow-sm"></div>
-                    <div className="w-3 h-3 rounded-full bg-amber-400 shadow-sm"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400 shadow-sm"></div>
-                  </div>
-                  <div className="bg-white rounded-md px-4 py-1.5 text-xs text-slate-500 flex-1 mx-4 flex items-center gap-2 border border-slate-200 shadow-sm">
-                    <span className="material-symbols-outlined text-[14px] text-emerald-600">
-                      smart_toy
-                    </span>
-                    <span>ChatGPT Analysis - SentimenAI</span>
-                  </div>
-                </div>
-
-                {/* Dashboard Screenshot Placeholder */}
-                <div className="w-full bg-[#f8fafc] relative flex">
-                  <img
-                    src="/dashboard-screenshoot.png"
-                    alt="Dashboard"
-                    className="w-full h-auto object-contain block"
-                  />
-                </div>
-              </div>
+                Explore Features
+              </button>
             </div>
-
-            {/* Subtle background accent */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-surface-container to-transparent opacity-50 z-0 pointer-events-none"></div>
           </div>
+
+          {/* Subtle background accents */}
+          <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-surface-container to-transparent opacity-30 z-0 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-surface-container to-transparent opacity-30 z-0 pointer-events-none"></div>
         </section>
-        {/* Video Demo Section */}
         <section
           id="demo-section"
-          className="bg-surface py-xl border-t border-surface-variant"
+          className="bg-surface border-t border-surface-variant flex flex-col justify-center"
+          style={{ minHeight: "calc(100vh - 4rem)" }}
         >
-          <div className="max-w-container-max mx-auto px-gutter text-center flex flex-col items-center">
-            <h2 className="font-headline-lg text-headline-lg text-on-surface mb-xs">
-              See SentimenAI in Action
-            </h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-2xl">
-              Watch how the platform scrapes real data, processes it through
-              multiple stages, and delivers clear sentiment results — all in a
-              few clicks.
-            </p>
-            <div className="relative w-full max-w-4xl aspect-video bg-surface-container-low rounded-xl border border-surface-variant overflow-hidden shadow-[0_20px_40px_rgba(18,28,42,0.05)] group cursor-pointer">
-              <img
-                alt="Platform Demo Video"
-                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-Rx9aeSjcHEyvZJ48T6O51igM-Pomz5BJrjwZK_i7y2kmLXNlTgWja3NwNTvMa5ot21rQj8tWS6cIM6eHkYU645476ojaHgv3wR_94lHM5HWR4IW8E4D3U0x9DQvsSlGa0WG0rPmL-AlSlb7CaaJrSp501J8IgK3qqf2375585bR0-l2N6ZpGKZxRGeaecW2emGdeEPWGoTe_LVNpKq2l-BtK7MsrbsZsuzUyYCDA6DXhLM7bPosTH0dO8mwnvZDA46lIIoKOcjb8"
-              />
-              <div className="absolute inset-0 bg-on-surface/10 group-hover:bg-transparent transition-colors duration-300"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-primary/90 text-on-primary rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 group-hover:bg-primary transition-all duration-300 shadow-[0_8px_16px_rgba(0,108,73,0.25)]">
-                  <span className="material-symbols-outlined text-[36px] ml-1">
-                    play_arrow
+          <div className="max-w-container-max mx-auto px-gutter py-8 flex flex-col h-full">
+            {/* Header — compact */}
+            <div className="text-center mb-4">
+              <h2 className="font-headline-lg text-headline-lg text-on-surface mb-1">
+                See SentimenAI in Action
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
+                Explore each step of the platform — from collecting data to
+                getting AI-powered sentiment insights.
+              </p>
+            </div>
+
+            {/* Tab Buttons — compact */}
+            <div className="flex flex-wrap justify-center gap-1.5 mb-4">
+              {showcaseTabs.map((tab, index) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(index)}
+                  className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                    activeTab === index
+                      ? tab.color === "blue"
+                        ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20"
+                        : tab.color === "purple"
+                          ? "bg-[#630ed4] text-white shadow-lg shadow-purple-600/20"
+                          : "bg-emerald-600 text-white shadow-lg shadow-emerald-600/20"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-[16px]">
+                    {tab.icon}
                   </span>
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Showcase Content with Arrows */}
+            <div className="max-w-5xl mx-auto w-full flex items-center gap-3 flex-1 min-h-0">
+              {/* Left Arrow */}
+              <button
+                onClick={() =>
+                  setActiveTab((prev) =>
+                    prev === 0 ? showcaseTabs.length - 1 : prev - 1,
+                  )
+                }
+                className="hidden md:flex w-10 h-10 rounded-full border border-slate-200 bg-white shadow-sm items-center justify-center text-slate-500 hover:text-emerald-600 hover:border-emerald-300 hover:shadow-md transition-all flex-shrink-0"
+              >
+                <span className="material-symbols-outlined text-[20px]">
+                  chevron_left
+                </span>
+              </button>
+
+              {/* Browser Mockup */}
+              <div className="flex-1 min-w-0">
+                <div className="bg-white rounded-xl border border-slate-200 shadow-[0_12px_40px_-10px_rgba(0,0,0,0.08)] overflow-hidden">
+                  {/* Browser Header */}
+                  <div className="bg-slate-50 px-4 py-2 flex items-center gap-3 border-b border-slate-200">
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                    </div>
+                    <div className="bg-white rounded-md px-3 py-1 text-xs text-slate-400 flex-1 mx-2 border border-slate-200 flex items-center gap-1.5">
+                      <span className="material-symbols-outlined text-[12px] text-emerald-600">
+                        lock
+                      </span>
+                      sentimen-ai.vercel.app/{showcaseTabs[activeTab].id}
+                    </div>
+                  </div>
+
+                  {/* Screenshot Area — FIXED height so arrows never shift */}
+                  <div className="relative bg-slate-50">
+                    <img
+                      src={showcaseTabs[activeTab].screenshot}
+                      alt={showcaseTabs[activeTab].label}
+                      className="w-full h-auto block"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = "none";
+                        const parent = target.parentElement;
+                        if (
+                          parent &&
+                          !parent.querySelector(".placeholder-msg")
+                        ) {
+                          const placeholder = document.createElement("div");
+                          placeholder.className =
+                            "placeholder-msg flex flex-col items-center justify-center py-24 text-slate-400 gap-2";
+                          placeholder.innerHTML = `
+                            <span class="material-symbols-outlined text-[40px]">add_photo_alternate</span>
+                            <p class="font-medium text-sm">Screenshot: ${showcaseTabs[activeTab].label}</p>
+                            <p class="text-xs">Tambahkan ke /public/screenshots/</p>
+                          `;
+                          parent.appendChild(placeholder);
+                        }
+                      }}
+                    />
+                  </div>
+
+                  {/* Description Bar — compact */}
+                  <div
+                    className={`px-5 py-3 border-t border-slate-100 flex items-center gap-3 ${
+                      showcaseTabs[activeTab].color === "blue"
+                        ? "bg-blue-50/50"
+                        : showcaseTabs[activeTab].color === "purple"
+                          ? "bg-purple-50/50"
+                          : "bg-emerald-50/50"
+                    }`}
+                  >
+                    <div
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                        showcaseTabs[activeTab].color === "blue"
+                          ? "bg-blue-100 text-blue-600"
+                          : showcaseTabs[activeTab].color === "purple"
+                            ? "bg-purple-100 text-purple-600"
+                            : "bg-emerald-100 text-emerald-600"
+                      }`}
+                    >
+                      <span className="material-symbols-outlined text-[18px]">
+                        {showcaseTabs[activeTab].icon}
+                      </span>
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-on-surface text-sm">
+                        {showcaseTabs[activeTab].label}
+                      </h3>
+                      <p className="text-xs text-on-surface-variant leading-relaxed">
+                        {showcaseTabs[activeTab].description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              {/* Right Arrow */}
+              <button
+                onClick={() =>
+                  setActiveTab((prev) =>
+                    prev === showcaseTabs.length - 1 ? 0 : prev + 1,
+                  )
+                }
+                className="hidden md:flex w-10 h-10 rounded-full border border-slate-200 bg-white shadow-sm items-center justify-center text-slate-500 hover:text-emerald-600 hover:border-emerald-300 hover:shadow-md transition-all flex-shrink-0"
+              >
+                <span className="material-symbols-outlined text-[20px]">
+                  chevron_right
+                </span>
+              </button>
+            </div>
+
+            {/* Step Indicator Dots + Mobile Arrows */}
+            <div className="flex items-center justify-center gap-3 mt-4">
+              <button
+                onClick={() =>
+                  setActiveTab((prev) =>
+                    prev === 0 ? showcaseTabs.length - 1 : prev - 1,
+                  )
+                }
+                className="md:hidden w-8 h-8 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-400"
+              >
+                <span className="material-symbols-outlined text-[18px]">
+                  chevron_left
+                </span>
+              </button>
+              {showcaseTabs.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveTab(index)}
+                  className={`rounded-full transition-all duration-300 ${
+                    activeTab === index
+                      ? "w-7 h-2 bg-emerald-600"
+                      : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
+                  }`}
+                />
+              ))}
+              <button
+                onClick={() =>
+                  setActiveTab((prev) =>
+                    prev === showcaseTabs.length - 1 ? 0 : prev + 1,
+                  )
+                }
+                className="md:hidden w-8 h-8 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-400"
+              >
+                <span className="material-symbols-outlined text-[18px]">
+                  chevron_right
+                </span>
+              </button>
             </div>
           </div>
         </section>
