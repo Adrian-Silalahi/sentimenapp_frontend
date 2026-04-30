@@ -178,7 +178,17 @@ frontend/
 
 ## 📸 Screenshots
 
-> _Add screenshots to `/public/screenshots/` to populate the landing page showcase._
+### Data Extraction
+![Data Extraction](public/screenshots/extraction.png)
+
+### Preprocessing Pipeline
+![Preprocessing](public/screenshots/preprocessing.png)
+
+### Sentiment Analysis
+![Sentiment Analysis](public/screenshots/analysis.png)
+
+### Model Builder Simulation
+![Model Builder](public/screenshots/model-builder.png)
 
 ---
 
