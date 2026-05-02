@@ -12,7 +12,7 @@ const LandingPage: React.FC = () => {
       color: "emerald",
       description:
         "Scrape public opinions from YouTube, Play Store, and Twitter — directly from the browser. Set your keyword, hit extract, and watch the data flow in.",
-      screenshot: "/screenshots/extraction.png",
+      screenshot: "/screenshots/extraction.webp",
     },
     {
       id: "preprocessing",
@@ -21,7 +21,7 @@ const LandingPage: React.FC = () => {
       color: "emerald",
       description:
         "Clean and prepare your data through 4 automated steps: HTML cleansing, normalization, sentiment labeling, and data balancing.",
-      screenshot: "/screenshots/preprocessing.png",
+      screenshot: "/screenshots/preprocessing.webp",
     },
     {
       id: "analysis",
@@ -30,7 +30,7 @@ const LandingPage: React.FC = () => {
       color: "blue",
       description:
         "Analyze sentiment instantly — type a single text or upload an entire dataset. Get clear results: Positive, Negative, or Neutral.",
-      screenshot: "/screenshots/analysis.png",
+      screenshot: "/screenshots/analysis.webp",
     },
     {
       id: "model-builder",
@@ -39,7 +39,7 @@ const LandingPage: React.FC = () => {
       color: "purple",
       description:
         "Explore how a RoBERTa model is fine-tuned for sentiment analysis — an interactive simulation of the full training pipeline.",
-      screenshot: "/screenshots/model-builder.png",
+      screenshot: "/screenshots/model-builder.webp",
     },
   ];
 
