@@ -648,7 +648,7 @@ const FineTunePaper = () => {
                     value: `${simProgress.currentEpoch} / ${simProgress.totalEpochs}`,
                   },
                   {
-                    label: "Step",
+                    label: "Batch",
                     value: `${simProgress.step} / ${simProgress.totalSteps}`,
                   },
                   { label: "Training Loss", value: simProgress.loss },
